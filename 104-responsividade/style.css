@@ -1,0 +1,103 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: grid; 
+    grid-template-areas: 'navbar navbar navbar' 
+                         'section aside footer' 
+                         'section aside footer';
+    grid-template-rows: 9vh 30vh 30vh; /*altura do view é 100*/
+    grid-gap: 10px;
+}
+
+nav{
+    grid-area: navbar;
+    background-color: lightslategray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 16pt;
+    color: white;
+}
+
+section{
+    grid-area:section;
+    background-color: purple;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+}
+aside{
+    grid-area:aside;
+    background-color: chartreuse;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+}
+footer{
+    grid-area:footer;
+    background-color: crimson;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+}
+
+
+#menuHamburguer{
+    display: none; 
+    flex-direction: column; /*para ficar um em cima do outro, temos q colocar em formato de coluna. Em formato de linha ficaria um do lado do outro */
+    justify-content: space-around;
+    height: 25px;
+    width: 30px;
+}
+
+.trace{
+    background-color: white;
+    height: 3px;
+    width: 100%; /*100% do pai (menuHamburguer), ou seja, 30px;*/
+    border-radius: 40px;
+}
+
+/*breakpoint*/
+/*------------------TABLET---------------*/
+@media(max-width:768px){
+    #menuHamburguer{
+        display: flex;
+    }
+    nav a{
+        display: none;
+    }
+    nav{
+        background-color: black;
+        align-items: center;
+    }
+    body {
+        grid-template-areas: 'navbar navbar navbar' 
+                             'section section aside ' 
+                             'section section aside'
+                             'footer footer footer';
+        grid-template-rows: 9vh 30vh 30vh 30vh;
+    }
+}
+/*------------------CELULAR---------------*/
+@media(max-width:468px){
+    #menuHamburguer{
+        margin-left: 10px;
+    }
+
+    nav{
+        background-color: lightseagreen;
+        justify-content:left;
+    }
+
+    body {
+        grid-template-areas: 'navbar navbar navbar' 
+                             'section section section ' 
+                             'aside aside aside'
+                             'footer footer footer';
+        grid-template-rows: 9vh 30vh 30vh 30vh;
+    }
+}
