@@ -3,10 +3,11 @@ body {
     margin: 0;
     display: grid; 
     grid-template-areas: 'navbar navbar navbar' 
-                         'section aside footer' 
-                         'section aside footer';
-    grid-template-rows: 9vh 30vh 30vh; /*altura do view é 100*/
-    grid-gap: 10px;
+                         'section section aside' 
+                         'section section aside'
+                         'footer footer footer';
+    grid-template-rows: 9vh 30vh 30vh 30vh; /*altura do view é 100*/
+    grid-gap: 0px;
 }
 
 nav{
@@ -27,10 +28,23 @@ section{
     grid-area:section;
     background-color: purple;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     justify-content: center;
+    align-items: center;
 }
+
+section img{
+    height:150px;
+    width:150px;
+    border-radius: 100%;
+    /*prioridade (se fica por cima ou por baixo etc
+    z-index: 10;*/
+}
+
+
 aside{
+    padding:10px;
     grid-area:aside;
     background-color: chartreuse;
     display: flex;
@@ -43,14 +57,36 @@ footer{
     display: flex;
     justify-content: space-around;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+footer a{
+    color#fff;
+}
+
+.redeSocial {
+    display:flex;
+    width:100px;
+    height:40%;
+    justify-content: space-around;
+    }
+
+.links {
+    display:flex;
+    justify-content: space-around;
+}
+
+.imgrede{
+    width:50px;
+    height:50px;
+}
 
 #menuHamburguer{
     display: none; 
     flex-direction: column; /*para ficar um em cima do outro, temos q colocar em formato de coluna. Em formato de linha ficaria um do lado do outro */
     justify-content: space-around;
-    height: 25px;
+    height: 30px;
     width: 30px;
 }
 
@@ -80,6 +116,9 @@ footer{
                              'section section aside'
                              'footer footer footer';
         grid-template-rows: 9vh 30vh 30vh 30vh;
+        }
+    .links {
+       flex-direction: column;
     }
 }
 /*------------------CELULAR---------------*/
@@ -98,6 +137,14 @@ footer{
                              'section section section ' 
                              'aside aside aside'
                              'footer footer footer';
-        grid-template-rows: 9vh 30vh 30vh 30vh;
+        grid-template-rows: 9vh 50vh 50vh 50vh;
+    }
+
+    section img{
+        height:50px;
+        width:50px;
+        border-radius: 100%;
+        /*prioridade (se fica por cima ou por baixo etc
+        z-index: 10;*/
     }
 }
