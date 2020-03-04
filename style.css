@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    margin: 0; 
     display: grid; 
     grid-template-areas: 'navbar navbar navbar' 
                          'section section aside' 
@@ -12,7 +12,7 @@ body {
 
 nav{
     grid-area: navbar;
-    background-color: lightslategray;
+    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -42,6 +42,9 @@ section img{
     z-index: 10;*/
 }
 
+section h1 {
+    color: white;
+}
 
 aside{
     padding:10px;
@@ -74,7 +77,11 @@ footer a{
 
 .links {
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.links a {
+    padding: 10px;
 }
 
 .imgrede{
@@ -85,7 +92,7 @@ footer a{
 #menuHamburguer{
     display: none; 
     flex-direction: column; /*para ficar um em cima do outro, temos q colocar em formato de coluna. Em formato de linha ficaria um do lado do outro */
-    justify-content: space-around;
+    justify-content: space-between;
     height: 30px;
     width: 30px;
 }
